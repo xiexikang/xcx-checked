@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/multiple/multiple",
+    "pages/single/single"
+  
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#55beb7",
+    "navigationBarTitleText": "选中操作",
+    "navigationBarTextStyle":"#fff"
+  }
+}

@@ -1,0 +1,10 @@
+/* pages/single/single.wxss */
+
+.list{ padding: 30rpx;  overflow: hidden;}
+.list .li{ float: left; padding: 10rpx 15rpx; border: 1px solid #f0f0f0; border-radius: 10rpx;
+ font-size: 26rpx; color: #808080;  margin-right: 30rpx; margin-bottom: 30rpx;}
+.list .li.cur{color: #55beb7; border-color: #55beb7;}
+
+.seled{ width: 100%; margin-top: 30rpx; color: #666; font-size: 28rpx; padding: 0 30rpx; box-sizing: border-box;}
+.seled .sel-v{ color: #f00; font-weight: 700; font-size: 30rpx; margin-top: 20rpx; }
+

@@ -1,0 +1,19 @@
+<!--pages/single/single.wxml-->
+<!-- 单选操作 -->
+
+<view class='list'>
+  <block wx:for="{{items}}" wx:key="{{index}}">
+    <view class='li {{item.checked?"cur":""}}' data-id='{{item.id}}' data-value="{{item.value}}" bindtap='selSingle'>     
+      <label class='ti'>{{item.value}} </label>
+    </view>
+  </block>
+</view>
+
+<!-- 这里用来存储选中的标签的值 {{selVal}}-->
+<view class='seled'>
+  <view class='tt'>你当前选中的是：</view>
+  <label class='sel-v'>{{selVal}}</label>
+</view>
+
+
+

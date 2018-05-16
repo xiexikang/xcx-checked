@@ -1,0 +1,22 @@
+<!--pages/multiple/multiple.wxml-->
+<view class='the-label'>
+  <view class="th">
+    <label class="ti">标签 </label> 
+    <label class="tt">（选择下方标签，最多选择5个） </label> 
+  </view>
+  <view class='list'>
+    <block wx:for="{{items}}" wx:key="">
+      <view class="li {{item.checked?'cur':''}}" data-index="{{index}}" data-value="{{item.value}}" bindtap="checkLabs">
+        <label class='ti'>{{item.value}}</label>
+      </view>
+    </block>
+    <!-- 这里用来存储选中的标签的值 {{arr}}-->
+    <!-- <input type='text' value='{{arr}}' style='display:none' /> -->
+  </view>
+</view>  
+
+<!-- 这里用来存储选中的标签的值 {{arr}}-->
+<view class='seled'>
+  <view class='tt'>你当前选中的是：</view>
+  <label class='sel-v'>{{arr}}</label>
+</view>
