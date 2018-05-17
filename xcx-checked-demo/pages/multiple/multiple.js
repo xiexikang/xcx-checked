@@ -7,13 +7,13 @@ Page({
    */
   data: {
     items: [
-      { value: '曾小贤', checked: '', disabled: '' },
-      { value: '胡一菲', checked: '', disabled: '' },
-      { value: '吕子乔', checked: '', disabled: '' },
-      { value: '陈美嘉', checked: '', disabled: '' },
-      { value: '陆展博', checked: '', disabled: '' },
-      { value: '丽莎蓉', checked: '', disabled: '' },
-      { value: '关谷神奇', checked: '', disabled: '' },
+      { value: '曾小贤', checked: 'true'},
+      { value: '胡一菲', checked: 'true' },
+      { value: '吕子乔', checked: '' },
+      { value: '陈美嘉', checked: '' },
+      { value: '陆展博', checked: '' },
+      { value: '丽莎蓉', checked: '' },
+      { value: '关谷神奇', checked: '' },
     ],
     arr: [], //标签数组：用来存储选中的值
   },
@@ -64,7 +64,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //已选中的时候
+    var that = this,
+        arr = that.data.arr,
+        items = that.data.items
+    for (var i = 0; i < items.length; i++) {
+      if(items[i].checked) {
+        var value = items[i].value;
+        arr.push(value);
+        
+        this.setData({
+          items: items,
+          arr: arr
+        })  
+      }
+    }
   },
 
   /**
