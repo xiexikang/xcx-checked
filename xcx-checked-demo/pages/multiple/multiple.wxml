@@ -5,13 +5,11 @@
     <label class="tt">（选择下方标签，最多选择5个） </label> 
   </view>
   <view class='list'>
-    <block wx:for="{{items}}" wx:key="">
-      <view class="li {{item.checked?'cur':''}}" data-index="{{index}}" data-value="{{item.value}}" bindtap="checkLabs">
-        <label class='ti'>{{item.value}}</label>
+    <block wx:for="{{items}}" wx:for-item="v" wx:key="k" wx:for-index="index">
+      <view class="li {{v.checked?'cur':''}}" data-index="{{index}}" data-value="{{v.value}}" bindtap="checkLabs">
+        <label class='ti'>{{v.value}}</label>
       </view>
     </block>
-    <!-- 这里用来存储选中的标签的值 {{arr}}-->
-    <!-- <input type='text' value='{{arr}}' style='display:none' /> -->
   </view>
 </view>  
 

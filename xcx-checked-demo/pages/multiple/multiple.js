@@ -18,14 +18,16 @@ Page({
     arr: [], //标签数组：用来存储选中的值
   },
 
-  checkLabs: function (e) {
-    var index = e.currentTarget.dataset.index,
-      value = e.currentTarget.dataset.value,
-      items = this.data.items,
-      arr = this.data.arr,
-      val = items[index].checked, //点击前的值
-      limitNum = 5,
-      curNum = 0; //已选择数量
+  //选择标签方法
+  checkLabs(e) {
+    var that = this, 
+        index = e.currentTarget.dataset.index,
+        value = e.currentTarget.dataset.value,
+        items = that.data.items,
+        arr = that.data.arr,
+        val = items[index].checked, //点击前的值
+        limitNum = 5,
+        curNum = 0; //已选择数量
 
     //选中累加
     for (var i in items) {
@@ -53,32 +55,36 @@ Page({
     }
     items[index].checked = !val;
 
-    this.setData({
+    that.setData({
       items: items,
       arr: arr
     })
 
   },
 
+
+ //默认选中为true的
+  selectEd(e){
+    var that = this,
+      arr = that.data.arr,
+      items = that.data.items
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].checked) {
+        var value = items[i].value;
+        arr.push(value);
+        that.setData({
+          items: items,
+          arr: arr
+        })
+      }
+    }
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //已选中的时候
-    var that = this,
-        arr = that.data.arr,
-        items = that.data.items
-    for (var i = 0; i < items.length; i++) {
-      if(items[i].checked) {
-        var value = items[i].value;
-        arr.push(value);
-        
-        this.setData({
-          items: items,
-          arr: arr
-        })  
-      }
-    }
+    this.selectEd();
   },
 
   /**

@@ -1,10 +1,9 @@
 <!--pages/single/single.wxml-->
 <!-- 单选操作 -->
-
 <view class='list'>
-  <block wx:for="{{items}}" wx:key="{{index}}">
-    <view class='li {{item.checked?"cur":""}}' data-id='{{item.id}}' data-value="{{item.value}}" bindtap='selSingle'>     
-      <label class='ti'>{{item.value}} </label>
+  <block wx:for="{{items}}" wx:for-item="v" wx:key="k" wx:for-index="index">
+    <view class='li {{v.checked?"cur":""}}' data-index='{{index}}' data-value="{{v.value}}" bindtap='selSingle'>     
+      <label class='ti'>{{v.value}} </label>
     </view>
   </block>
 </view>
