@@ -1,5 +1,4 @@
 // pages/multiple/multiple.js
-
 Page({
 
   /**
@@ -40,7 +39,7 @@ Page({
       if (curNum == limitNum) {
         wx.showModal({
           content: '选择数量不能超过' + limitNum + '个',
-          showCancel: false,
+          showCancel: false
         })
         return;
       }
